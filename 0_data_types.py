@@ -32,7 +32,6 @@ But what if you are a scientist or even better work in bank?
 Did you heard story about hacker that stole 1 penny from each transaction :D?
 """
 
-
 """So one important digression, Decimal datatype. When we care about rounding precision :)"""
 
 # fmt: off
@@ -54,3 +53,65 @@ decimal_5: decimal.Decimal = decimal.Decimal("0.000_000_000_000_000_000_000_000_
 decimal_6: decimal.Decimal = decimal_4 - decimal_5
 print(f"{decimal_6 = }")
 print(f"{(decimal_6 + decimal_5) == decimal_4 = }\n")
+
+"""None type. There is python specific design pattern that states if somewhere returns nothing should return None"""
+none_1 = None
+
+"""Booleans. They are simple, just True or False or maybe not :D?"""
+bool_1: bool = True
+bool_2: bool = False
+print(f"{bool_1 = }, {bool_2 = }")
+# We can test something if it is true or false
+print(f"1 is True: {bool(1)}")
+print(f"'some string' is True: {bool('some string')}")
+print(f"[1,2,3,4] is True: {bool([1, 2, 3, 4])}")
+print(f"None is True: {bool(None)}\n")
+
+"""We can check any data type using built-in function type(data)"""
+print(f"{type(first_int) = }, {type(first_float) = }, {type(string_1) = }, {type(decimal_1) = }, {type(none_1) = }")
+print(f"{int.mro() = }, {float.mro() = }, {str.mro() = }, {decimal.Decimal.mro() = }, {bool.mro() = }\n")
+
+"""
+More advanced containers for data, previously we had more basic types.
+"""
+
+"""Tuples, something like lists but immutable. RULE OF THUMB > DO NOT PUT mutable inside immutables."""
+tuple_1 = (1, 2, 3, 4, 5)
+tuple_2 = ("one", "two", "three", "four", "five")
+tuple_3 = ([1, 2, 3, 4, 5], [1, 2, 3, 4, 5], [1, 2, 3, 4, 5], [1, 2, 3, 4, 5])  # SOOOOOO BAD, don't do it.
+print(f"{tuple_1[0] = }, {tuple_1[1] = }, {tuple_1[2] = }, {tuple_1[3] = }, {tuple_1[4] = }")
+print(f"{tuple_2[0] = }, {tuple_2[1] = }, {tuple_2[2] = }, {tuple_2[3] = }, {tuple_2[4] = } \n")
+
+"""Lists: indexable data container where index can be also a form of data"""
+list_1 = [1, 2, 3, 4, 5]
+list_2 = ["one", "two", "three", "four", "five"]
+list_3 = list_1 + list_2
+print(f"{list_1 = }, \n{list_2 = }, \n{list_3 = }\n")
+print(f"{list_1[0] = }, {list_1[1] = }, {list_1[2] = }, {list_1[3] = }, {list_1[4] = }")
+print(f"{list_2[0] = }, {list_2[1] = }, {list_2[2] = }, {list_2[3] = }, {list_2[4] = } \n")
+
+"""Dictionaries, hash tables in python. Providing 0[1] lookup time"""
+dictionary_1 = {1: 1, 2: 2, 3: 3, 4: 4}
+dictionary_2 = {"one": 1, "two": 2, "three": 3, "four": 4}
+dictionary_3 = {"key1": "value1", "key2": "value2", "key3": "value3", "key4": "value4"}
+print(f"{dictionary_1 = }")
+print(f"{dictionary_2 = }")
+print(f"{dictionary_3 = }")
+print(f"{dictionary_1[1] = } \n{dictionary_2['two']= } \n{dictionary_3['key3'] = }\n")
+
+"""Sets, dictionaries where value is a pointer to a key. Sets same as dict keys don't allow same values"""
+set_1 = {1, 2, 3, 4, 1, 2, 3, 4}
+print(f"{set_1 = }")
+
+lst = list(range(1_000_000_0))
+st = set(range(1_000_000_0))
+
+print("starting")
+import time
+t_start = time.time()
+print(f"{999_999_999_999_999 in lst}")
+print(f"elapsed time: {time.time() - t_start:0.4f}")
+
+t_start = time.time()
+print(f"{999_999_999_999_999 in st}")
+print(f"elapsed time: {time.time() - t_start:0.4f}")

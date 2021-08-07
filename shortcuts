@@ -9,6 +9,7 @@ tab  >> indent code to the right
 shift + tab  > indent code to the left
 alt + j  >> multi cursor functionality
 ctrl + d  >> copy line where cursor is
+ctrl + shift + u  >> capitalize selected fragment
 
 
 
