@@ -13,3 +13,8 @@ print(f"{string_1 = }, some separator message, {string_2 = }\n")
 first_int: int = 0
 second_int: int = 10
 third_int: int = -100
+
+# But what would happen if we go beyond 2,147,483,647?
+beyond_int: int = 2_147_483_649
+# python converts int to internal long int. For us it is still int but inside one bit more on the left was added
+
