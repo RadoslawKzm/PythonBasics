@@ -9,3 +9,7 @@ print(f"{string_1 = }, some separator message, {string_2 = }\n")
 
 """Integers, numbers without floating points"""
 
+# int: Integer data type, consists numbers from -2,147,483,647 to 2,147,483,647
+first_int: int = 0
+second_int: int = 10
+third_int: int = -100
