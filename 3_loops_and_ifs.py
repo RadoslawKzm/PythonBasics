@@ -76,3 +76,73 @@ def if_example(a: int = 6):
 
 
 if_example()
+
+
+def elif_example(b: int = 6):
+    if b > 0:
+        print(f"{b = } is greater from zero")
+
+    elif b < 7:
+        print(f"{b = } is less then 7")
+
+    elif not (b % 2):
+        print(f"{b = } is even")
+
+
+elif_example()
+
+
+def if_example_upgraded(a: int = 6):
+    if a > 0:
+        print(f"{a = } is greater from zero")
+        return None
+
+    if a < 7:
+        print(f"{a = } is less then 7")
+        return None
+
+    if not (a % 2):
+        print(f"{a = } is even")
+        return None
+
+
+if_example_upgraded()
+
+
+def junior_function(c: int = 6):
+    if c > 0:
+        if c < 10:
+            if not (c % 2):
+                print(f"{c = } greater than zero but less than 10 and is even")
+            else:
+                print(f"{c = } greater than zero but less than 10 and is not even")
+        else:
+            print(f"{c = } greater than zero and more than 10")
+    else:
+        print(f"{c = } greater less zero")
+
+
+def better_function(d: int = 6):
+    if d > 0:
+        print(f"{d = } is greater than 0")
+        return None
+    if d < 10:
+        print(f"{d = } is less than 10")
+        return None
+    if not (d % 2):
+        print(f"{d = } is even")
+        return None
+
+
+e = 6
+if e > 0:
+    print(f"{e = } is greater than 0")
+else:
+    print(f"{e = } is less than 0")
+
+
+def some_function(f: int = 6):
+    if f > 0:
+        print(f"{f = } is greater than 0")
+        return None
+    print(f"{f = } is less than 0")
