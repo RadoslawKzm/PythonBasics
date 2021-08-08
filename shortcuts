@@ -12,6 +12,7 @@ ctrl + d  >> copy line where cursor is
 ctrl + shift + u  >> capitalize selected fragment
 ctrl + p  >> hint for input arguments to any function
 """<enter>"""  >> auto documentation for function with properly typed arguments
+cursor at unresolved reference & alt+enter >> import unresolved reference from libs
 
 
 https://join.slack.com/t/pytgda10/shared_invite/zt-tfb4mva8-aWJHB2j9Va6FdalLaI75rA
