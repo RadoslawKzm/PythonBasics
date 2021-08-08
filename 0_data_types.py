@@ -103,15 +103,44 @@ print(f"{dictionary_1[1] = } \n{dictionary_2['two']= } \n{dictionary_3['key3'] =
 set_1 = {1, 2, 3, 4, 1, 2, 3, 4}
 print(f"{set_1 = }")
 
-lst = list(range(1_000_000_0))
-st = set(range(1_000_000_0))
+"""Deque: double ended queue. Best for making queues and stacks"""
+# fmt: off
+from collections import deque
 
-print("starting")
-import time
-t_start = time.time()
-print(f"{999_999_999_999_999 in lst}")
-print(f"elapsed time: {time.time() - t_start:0.4f}")
+# fmt: on
 
-t_start = time.time()
-print(f"{999_999_999_999_999 in st}")
-print(f"elapsed time: {time.time() - t_start:0.4f}")
+deq = deque(range(10))
+deq.append(11)
+deq.appendleft(-1)
+deq_pop_left = deq.popleft()
+deq_pop = deq.pop()
+
+lst = list(range(10))
+lst.append(11)
+lst_pop = lst.pop()
+
+# FIFO queue ( first in - first out)
+deq1 = deque(range(10))
+deq1.append(int(input("podaj liczbe")))
+while deq1:
+    print(deq1.popleft())
+
+# FILO queue ( first in - last out)
+deq2 = deque(range(10))
+deq2.append(20)
+while deq2:
+    print(deq2.pop())
+
+
+# lst = list(range(1_000_000_0))
+# st = set(range(1_000_000_0))
+#
+# print("starting")
+# import time
+# t_start = time.time()
+# print(f"{999_999_999_999_999 in lst}")
+# print(f"elapsed time: {time.time() - t_start:0.4f}")
+#
+# t_start = time.time()
+# print(f"{999_999_999_999_999 in st}")
+# print(f"elapsed time: {time.time() - t_start:0.4f}")
