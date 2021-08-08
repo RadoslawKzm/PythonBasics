@@ -132,6 +132,7 @@ def better_function(d: int = 6):
     if not (d % 2):
         print(f"{d = } is even")
         return None
+    return None
 
 
 e = 6
@@ -146,3 +147,4 @@ def some_function(f: int = 6):
         print(f"{f = } is greater than 0")
         return None
     print(f"{f = } is less than 0")
+
