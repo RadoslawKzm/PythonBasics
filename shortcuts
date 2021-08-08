@@ -11,7 +11,7 @@ alt + j  >> multi cursor functionality
 ctrl + d  >> copy line where cursor is
 ctrl + shift + u  >> capitalize selected fragment
 ctrl + p  >> hint for input arguments to any function
-
+"""<enter>"""  >> auto documentation for function with properly typed arguments
 
 
 https://join.slack.com/t/pytgda10/shared_invite/zt-tfb4mva8-aWJHB2j9Va6FdalLaI75rA
