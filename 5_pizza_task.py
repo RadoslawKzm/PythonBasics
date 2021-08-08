@@ -13,6 +13,8 @@ from math import pi
 
 class Pizza:
     how_many_pizzas_done = 0
+    overall_gross_income: float = 0
+    overall_costs: float = 0
 
     def __init__(self, *, name: str, d_cm: int, price_zl: float, costs_zl: float, toppings: list = None):
         self.name = name
@@ -24,29 +26,35 @@ class Pizza:
         self._ratio = self._area_cm2 / self.price_zl
         if not self.toppings:
             self.toppings = []
-        self.update_counter()
+        self.update_counter(price_zl=self.price_zl, costs_zl=self.costs_zl)
 
     @classmethod
-    def update_counter(cls):
+    def update_counter(cls, *, price_zl: float, costs_zl: float):
         cls.how_many_pizzas_done += 1
+        cls.overall_gross_income += price_zl
+        cls.overall_costs += costs_zl
+
+    @classmethod
+    def calculate_net_income(cls) -> float:
+        return cls.overall_gross_income - cls.overall_costs
 
     def get_ratio(self):
         """The more ratio, the better pizza value"""
         return self._ratio
 
-    def __gt__(self, other) -> bool:
+    def __gt__(self, other: Pizza) -> bool:
         return self._ratio > other.get_ratio()
 
-    def __ge__(self, other):
+    def __ge__(self, other: Pizza):
         return self._ratio >= other.get_ratio()
 
     def __lt__(self, other: Pizza) -> bool:
         return self._ratio < other.get_ratio()
 
-    def __le__(self, other):
+    def __le__(self, other: Pizza):
         return self._ratio <= other.get_ratio()
 
-    def __eq__(self, other):
+    def __eq__(self, other: Pizza):
         return self._ratio == other.get_ratio()
 
 
