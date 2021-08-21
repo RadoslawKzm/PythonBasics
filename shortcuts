@@ -6,7 +6,7 @@ ctrl + t  >> update project from git
 ctrl + /  > comment/uncomment part of code
 shift + del  > delete line where you have cursor
 tab  >> indent code to the right
-shift + tab  > indent code to the left
+shift + tab  << indent code to the left
 alt + j  >> multi cursor functionality
 ctrl + d  >> copy line where cursor is
 ctrl + shift + u  >> capitalize selected fragment
