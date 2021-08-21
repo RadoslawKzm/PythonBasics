@@ -7,15 +7,6 @@ string_1: str = "Hello world"
 string_2: str = "Some random message"
 print(f"{string_1 = }, some separator message, {string_2 = }\n")
 
-backup_print = print
-print = 2
-import sys
-def new_print(word:str):
-    sys.stdout.write(f"{word}\n")
-
-new_print("test dupa")
-
-
 """Integers, numbers without floating points"""
 
 # int: Integer data type, consists numbers from -2,147,483,647 to 2,147,483,647
@@ -25,6 +16,7 @@ third_int: int = -100
 
 # But what would happen if we go beyond 2,147,483,647?
 beyond_int: int = 2_147_483_649
+
 # python converts int to internal long int. For us it is still int but inside one bit more on the left was added
 
 
@@ -64,7 +56,7 @@ print(f"{decimal_6 = }")
 print(f"{(decimal_6 + decimal_5) == decimal_4 = }\n")
 
 """None type. There is python specific design pattern that states if somewhere returns nothing should return None"""
-none_1 = None
+none_1: None = None
 
 """Booleans. They are simple, just True or False or maybe not :D?"""
 bool_1: bool = True
@@ -91,6 +83,7 @@ tuple_3 = ([1, 2, 3, 4, 5], [1, 2, 3, 4, 5], [1, 2, 3, 4, 5], [1, 2, 3, 4, 5])  
 print(f"{tuple_1[0] = }, {tuple_1[1] = }, {tuple_1[2] = }, {tuple_1[3] = }, {tuple_1[4] = }")
 print(f"{tuple_2[0] = }, {tuple_2[1] = }, {tuple_2[2] = }, {tuple_2[3] = }, {tuple_2[4] = } \n")
 
+
 """Lists: indexable data container where index can be also a form of data"""
 list_1 = [1, 2, 3, 4, 5]
 list_2 = ["one", "two", "three", "four", "five"]
@@ -107,6 +100,11 @@ print(f"{dictionary_1 = }")
 print(f"{dictionary_2 = }")
 print(f"{dictionary_3 = }")
 print(f"{dictionary_1[1] = } \n{dictionary_2['two']= } \n{dictionary_3['key3'] = }\n")
+keys = dictionary_1.keys()
+values = dictionary_1.values()
+
+# for key, val in dictionary_2.items():
+#     print("pass")
 
 """Sets, dictionaries where value is a pointer to a key. Sets same as dict keys don't allow same values"""
 set_1 = {1, 2, 3, 4, 1, 2, 3, 4}
@@ -140,16 +138,16 @@ deq2.append(20)
 while deq2:
     print(deq2.pop())
 
-
-# lst = list(range(1_000_000_0))
-# st = set(range(1_000_000_0))
+# lst = list(range(10_000_000))
+# st = set(range(10_000_000))
 #
 # print("starting")
 # import time
 # t_start = time.time()
-# print(f"{999_999_999_999_999 in lst}")
+# print(f"{9_999_999 in lst}")
 # print(f"elapsed time: {time.time() - t_start:0.4f}")
 #
 # t_start = time.time()
-# print(f"{999_999_999_999_999 in st}")
+# print(f"{9_999_999 in st}")
 # print(f"elapsed time: {time.time() - t_start:0.4f}")
+# print("pass")
