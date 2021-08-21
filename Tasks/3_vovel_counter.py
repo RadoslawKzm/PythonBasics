@@ -1,6 +1,6 @@
 """Create program that counts vowel occurrences in given string
 input: string = "Some test string"
-output: whatever that shows cout of vowels
+output: whatever that shows count of vowels
 """
 
 from collections import Counter
