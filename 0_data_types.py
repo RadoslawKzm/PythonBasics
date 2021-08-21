@@ -7,6 +7,15 @@ string_1: str = "Hello world"
 string_2: str = "Some random message"
 print(f"{string_1 = }, some separator message, {string_2 = }\n")
 
+backup_print = print
+print = 2
+import sys
+def new_print(word:str):
+    sys.stdout.write(f"{word}\n")
+
+new_print("test dupa")
+
+
 """Integers, numbers without floating points"""
 
 # int: Integer data type, consists numbers from -2,147,483,647 to 2,147,483,647
