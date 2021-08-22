@@ -2,6 +2,10 @@
 
 """While loop example"""
 
+# while n := 0 < 5:
+#     n += 1
+#     print(n)
+
 var: int = 6
 while var:  # if true than while loop will go even forever
     print(f"{var = }")
@@ -9,23 +13,23 @@ while var:  # if true than while loop will go even forever
 
 
 class IteratorExample:
-    def __init__(self, lst: list = None):
-        self.lst = lst
-        if not lst:
+    def __init__(self, *, _lst: list = None):
+        self.lst = _lst
+        if not _lst:
             self.lst = [1, 2, 3, 4]
 
     def __iter__(self):
         self.index_ = -1
         return self
 
-    def __next__(self):
+    def __next__(self) -> int:
         self.index_ += 1
         if self.index_ == len(self.lst):
             raise StopIteration
         return self.lst[self.index_]
 
 
-test_example = IteratorExample(lst=[1, 2, 3, 4])
+test_example = IteratorExample(_lst=[1, 2, 3, 4])
 
 for number in test_example:
     print(number)
@@ -69,6 +73,7 @@ for i in range(11):
 print(f"{evens = }")
 
 evens2 = [num22 if (num22 % 2) == 0 else "dupa" for num22 in range(11)]
+evens3 = [num22 for num22 in range(11) if (num22 % 2) == 0]
 
 dict_comp = {key: val for key, *val in zip(range(2), range(10, 0, -1), range(10, 0, -1))}
 
