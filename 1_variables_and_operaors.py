@@ -48,4 +48,3 @@ print(f"{a = }\n")
 set_1 = {1, 2, 3, 4, 5}
 print(f"{1 in set_1 = }, {6 in set_1 = }\n")
 print(f"{1 not in set_1 = }, {6 not in set_1 = }\n")
-

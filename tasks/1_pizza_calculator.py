@@ -94,9 +94,11 @@ class Pizza(PizzaABC):
         return f"{self.price=}, {self.currency=}, {self.diameter=}, {self.ratio=}, {self.toppings=}"
 
     def __str__(self):
-        return f"{self.name or 'Pizza'}: {self.diameter}cm bought for {self.price}{self.currency} \n" \
-               f"with toppings:{self.toppings} \n" \
-               f"overall ratio is {self.ratio:0.2f}cm2/1zl"
+        return (
+            f"{self.name or 'Pizza'}: {self.diameter}cm bought for {self.price}{self.currency} \n"
+            f"with toppings:{self.toppings} \n"
+            f"overall ratio is {self.ratio:0.2f}cm2/1zl"
+        )
 
 
 if __name__ == "__main__":

@@ -53,7 +53,9 @@ class PriceStrategy:
 
 
 class Pizza(PriceStrategy):
-    avail_strategies = {"price": PriceStrategy, "area_price_ratio": AreaRatioStrategy}
+    gross_income = 0
+    costs = 0
+    dictio = {}
 
     def __init__(self, *, name: str, diameter: int, toppings: list, price: float, costs: float):
         self.name = name
@@ -64,6 +66,25 @@ class Pizza(PriceStrategy):
 
         self.area = pi * (self.diameter / 2) ** 2
         self.ratio = self.area / self.price
+        self.update_gross_income(price=self.price)
+        self.update_costs(costs=self.costs)
+        self.update_dictio(name=self.name, obj=self)
+
+    @classmethod
+    def update_dictio(cls, name, obj):
+        cls.dictio[name] = obj
+
+    @classmethod
+    def update_gross_income(cls, *, price: float) -> None:
+        cls.gross_income += price
+
+    @classmethod
+    def update_costs(cls, *, costs: float) -> None:
+        cls.costs += costs
+
+    @classmethod
+    def get_net_income(cls) -> float:
+        return cls.gross_income - cls.costs
 
 
 margherita = Pizza(diameter=30, toppings=["cheese"], costs=10, name="Margherita", price=25.56)

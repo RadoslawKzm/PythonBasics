@@ -15,4 +15,3 @@ if i <= 2:
     print("pass")
 if i == 2:
     print("pass")
-

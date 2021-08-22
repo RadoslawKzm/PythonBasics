@@ -33,4 +33,3 @@ fifo += 1
 
 for member in fifo:
     print(f"{member}")
-
