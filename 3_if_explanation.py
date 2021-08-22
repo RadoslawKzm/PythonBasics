@@ -58,10 +58,10 @@ else:
 z = 0
 if z > 0:
     print(f"{z = } is greater than 0")
-if z <= 0:
-    print(f"{z = } is less or equal than 0")  # will enter here
+if z < 0:
+    print(f"{z = } is less than 0")  # will enter here
 if z == 0:
-    print(f"{z = } is not equal 0")  # will enter here too
+    print(f"{z = } is equal 0")  # will enter here too
 
 
 def if_example(a: int = 6):
@@ -122,11 +122,14 @@ def junior_function(c: int = 6):
         print(f"{c = } greater less zero")
 
 
+# junior_function()
+
+
 def better_function(d: int = 6):
-    if d > 0:
+    if 0 < d < 10 and not (d % 2):
         print(f"{d = } is greater than 0")
         return None
-    if d < 10:
+    if d < 10 and not (d % 2):
         print(f"{d = } is less than 10")
         return None
     if not (d % 2):
@@ -135,7 +138,9 @@ def better_function(d: int = 6):
     return None
 
 
-e = 6
+# better_function()
+
+e = -1
 if e > 0:
     print(f"{e = } is greater than 0")
 else:
@@ -147,4 +152,3 @@ def some_function(f: int = 6):
         print(f"{f = } is greater than 0")
         return None
     print(f"{f = } is less than 0")
-
