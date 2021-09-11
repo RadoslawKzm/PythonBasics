@@ -2,8 +2,23 @@ import math
 
 
 class Rational:
+    instances = []
+
+    @classmethod
+    def max(cls):
+        return max(instance.number for instance in cls.instances)
+
     def __init__(self, number: float):
         self.number = number
+        self.update_instances(self)
+
+    @classmethod
+    def update_instances(cls, self):
+        cls.instances.append(self)
+
+    @staticmethod
+    def static(num_1: int, num_2: int):
+        print(num_1 + num_2)
 
     def calculate(self) -> str:
         lst = str(self.number).split('.')
@@ -20,7 +35,7 @@ class Rational:
         return self.calculate()
 
     def __repr__(self):
-        return self.calculate()
+        return f"Rational class with args: {self.number = }, {self.instances = }"
 
     def __eq__(self, other) -> bool:
         return self.number == other
@@ -46,18 +61,26 @@ class Rational:
         return self.calculate()
 
     def write_to_file(self, filename: str):
-        pass
+        with open(filename, "w") as f:
+            f.write(f"{self.number = }")
 
 
 tst = Rational(1.0008)
-print(f"{str(tst) = }")
+# print(f"{str(tst) = }")
 
-tst = Rational(1.5)
-print(f"{str(tst) = }")
-
-bool(tst == 2)
-
-var = tst + 2
-tst += 2
-
+tst2 = Rational(1.5)
+# print(f"{str(tst) = }")
+#
+# tst.write_to_file("test.txt")
+#
 print("pass")
+
+
+class Calculator:
+    @staticmethod
+    def add(first, second):
+        return first + second
+
+    @staticmethod
+    def sub(first, second):
+        return first - second
