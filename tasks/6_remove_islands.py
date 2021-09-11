@@ -33,3 +33,20 @@ removed ones:
 
 Create an algorithm that will clear all islands not connected to a border.
 """
+from typing import List
+
+input_ = [
+    [1, 0, 0, 0, 0, 0],
+    [0, 1, 0, 1, 1, 1],
+    [0, 0, 1, 0, 1, 0],
+    [1, 1, 0, 0, 1, 0],
+    [1, 0, 1, 1, 0, 0],
+    [1, 0, 0, 0, 0, 1],
+]
+
+
+def remove_islands(*, matrix: List[List], token):
+    pass
+
+
+output = remove_islands(matrix=input_, token=1)
