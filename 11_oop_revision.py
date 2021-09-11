@@ -45,7 +45,8 @@ class Rational:
         self.number += other
         return self.calculate()
 
-
+    def write_to_file(self, filename: str):
+        pass
 
 
 tst = Rational(1.0008)
